@@ -7,6 +7,7 @@
 
     <!-- Text dimens -->
     <dimen name="text_14">14sp</dimen>
+    <dimen name="text_16">16sp</dimen>
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_24">24sp</dimen>
 
@@ -14,4 +15,7 @@
     <dimen name="poster_image_view_width">120dp</dimen>
     <dimen name="favorite_movie_poster_width">80dp</dimen>
     <dimen name="favorite_movie_poster_height">120dp</dimen>
+    <dimen name="movie_details_poster_width">140dp</dimen>
+    <dimen name="movie_details_poster_height">210dp</dimen>
+
 </resources>

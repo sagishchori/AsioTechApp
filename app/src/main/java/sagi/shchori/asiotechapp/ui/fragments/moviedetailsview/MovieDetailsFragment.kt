@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import sagi.shchori.asiotechapp.Logger
 import sagi.shchori.asiotechapp.R
@@ -103,17 +104,19 @@ class MovieDetailsFragment : Fragment() {
                     setFavoriteImageResource((activeDetailViewModel as FavoritesViewModel).selectedMovie.value?.isFavorite)
                 }
             }
-//
-//            isFavoriteOn = !isFavoriteOn
-//
-//            setFavoriteImageResource(isFavoriteOn)
         }
     }
 
     private fun updateUi(movie: Movie?) {
         binding.movieTitle.text = movie?.title
+        binding.movieId.text = movie?.imdbID
         binding.movieYear.text = movie?.year
         binding.moviePlot.text = movie?.movieDetails?.plot
+
+        Glide.with(requireContext())
+            .load(movie?.poster)
+            .placeholder(R.drawable.ic_image_not_supported_100)
+            .into(binding.moviePoster)
 
         val isFavoriteOn = movie?.isFavorite ?: false
 

@@ -66,7 +66,6 @@ class MovieAdapter @Inject constructor(private val listener: OnMovieClickListene
         val pos = holder.bindingAdapterPosition
         val movie = movies[pos]
         holder.bind(movie)
-        setScaleToListItem(movie.isSelected, holder.itemView)
 
         // This is for first time after screen rotation
         if (movie.isSelected && selectedView == null) {
@@ -80,14 +79,11 @@ class MovieAdapter @Inject constructor(private val listener: OnMovieClickListene
         holder.itemView.setOnClickListener {
             movie.isSelected = true
 
-            setScaleToListItem(true, holder.itemView)
-
             // If the selected item is different than before it need to reset its appearance
             if (selectedView != it) {
 
                 // Only if previous item exist scale it to normal
                 selectedView?.let {     view ->
-                    setScaleToListItem(false, view)
 
                     // reset the isSelected parameter to avoid UX issues
                     movies[selectedPosition].isSelected = false
@@ -99,16 +95,6 @@ class MovieAdapter @Inject constructor(private val listener: OnMovieClickListene
             }
 
             listener.onMovieClicked(movie, pos)
-        }
-    }
-
-    private fun setScaleToListItem(selected: Boolean, itemView: View) {
-        if (selected) {
-            itemView.scaleX = 1.2f
-            itemView.scaleY = 1.2f
-        } else {
-            itemView.scaleX = 1f
-            itemView.scaleY = 1f
         }
     }
 
