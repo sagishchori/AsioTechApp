@@ -1,0 +1,50 @@
+# IntelliJ IDEA / Android Studio module files
+*.iml
+
+# Gradle build system files and caches
+.gradle/
+
+# Project-level build directory
+build/
+
+# Local configuration (SDK path, etc.)
+# Handles both /local.properties and local.properties
+local.properties
+
+# Android Studio / IntelliJ IDEA project files
+# Ignore the entire .idea directory by default
+.idea/
+
+# macOS specific files
+.DS_Store
+
+# Android Studio screen captures
+captures/
+
+# Native build output
+# Added trailing slash for directory
+.externalNativeBuild/
+
+# Added trailing slash for directory
+.cxx/
+
+# Built application files
+*.apk
+*.aab
+*.ap_ # Older format
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files (generally covered by build/ ignore, but explicit)
+*.class
+
+# Log Files
+*.log
+
+# Keystore files (IMPORTANT: Never commit these to a public repo)
+*.jks
+*.keystore
+
+# Environment files (if you use .env for secrets)
+# .env

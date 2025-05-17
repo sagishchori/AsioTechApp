@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/half_unit">
+
+    <ImageView
+        android:id="@+id/favorite_movie_poster"
+        android:layout_width="@dimen/favorite_movie_poster_width"
+        android:layout_height="@dimen/favorite_movie_poster_height"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/favorite_movie_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/half_unit"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="@dimen/text_18"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/favorite_icon_toggle"
+        app:layout_constraintStart_toEndOf="@+id/favorite_movie_poster"
+        app:layout_constraintTop_toTopOf="@+id/favorite_movie_poster"
+        tools:text="Movie Title" />
+
+    <TextView
+        android:id="@+id/favorite_movie_year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/half_unit"
+        android:layout_marginTop="4dp"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        app:layout_constraintEnd_toStartOf="@+id/favorite_icon_toggle"
+        app:layout_constraintStart_toEndOf="@+id/favorite_movie_poster"
+        app:layout_constraintTop_toBottomOf="@+id/favorite_movie_title"
+        tools:text="2023" />
+
+    <ImageView
+        android:id="@+id/favorite_icon_toggle"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:padding="6dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/favorite_movie_title"
+        app:layout_constraintBottom_toBottomOf="@+id/favorite_movie_year"
+        app:srcCompat="@drawable/ic_favorite_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

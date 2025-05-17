@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Standard app dimens -->
+    <dimen name="unit">16dp</dimen>
+    <dimen name="half_unit">8dp</dimen>
+    <dimen name="units_2">32dp</dimen>
+
+    <!-- Text dimens -->
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_24">24sp</dimen>
+
+    <dimen name="poster_image_view_height">200dp</dimen>
+    <dimen name="poster_image_view_width">120dp</dimen>
+    <dimen name="favorite_movie_poster_width">80dp</dimen>
+    <dimen name="favorite_movie_poster_height">120dp</dimen>
+</resources>
