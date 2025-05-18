@@ -56,7 +56,7 @@ class MovieRepository @Inject constructor(
 
         // continue to search on the web
         val response = try {
-            api.searchMovies(NetworkModule.apiKey, query)
+            api.searchMovies(NetworkModule.OMDB_API_KEY, query)
         } catch (ex: Exception) {
             Logger.e("searchMovies(): Exception for query: '$query': $ex")
 
@@ -234,7 +234,9 @@ class MovieRepository @Inject constructor(
         return movieDao.getFavoriteMovies()
     }
 
-    // Optional: If you need to toggle favorite status from the favorites screen itself
+    /**
+     * Set a favorite movie into DB. It uses for toggling the favorite status.
+     */
     suspend fun updateFavoriteStatus(movieId: String, isFavorite: Boolean) {
         try {
             val dbResult = movieDao.searchMovie(movieId)
@@ -252,7 +254,5 @@ class MovieRepository @Inject constructor(
         } catch (ex: Exception) {
             Logger.e("setMovieAsFavorite(): Error setting movie as favorite. Exception: $ex")
         }
-
-//        movieDao.updateFavoriteStatus(movieId, isFavorite)
     }
 }

@@ -35,6 +35,8 @@ class Converters {
         return try {
             Gson().fromJson(json, MovieDetails::class.java)
         } catch (ex: Exception) {
+            Logger.e("movieDetailsClassFromString: Error parsing MovieDetails from JSON. JSON: $json, Exception: $ex")
+
             null
         }
     }

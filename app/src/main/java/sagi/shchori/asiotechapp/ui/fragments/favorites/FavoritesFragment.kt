@@ -35,6 +35,7 @@ class FavoritesFragment : Fragment(), OnFavoriteMovieClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
+
         observeViewModel()
     }
 
@@ -56,7 +57,7 @@ class FavoritesFragment : Fragment(), OnFavoriteMovieClickListener {
         favoritesViewModel.favoriteMovies.observe(viewLifecycleOwner) { movies ->
             favoritesAdapter.submitList(movies)
 
-            if (movies.isEmpty()) {
+            if (movies.isEmpty()) { // Show no results view
                 binding.favoritesRecyclerView.visibility = View.GONE
                 binding.emptyFavoritesText.visibility = View.VISIBLE
 
@@ -81,6 +82,7 @@ class FavoritesFragment : Fragment(), OnFavoriteMovieClickListener {
 
         favoritesViewModel.toggleFavoriteStatus(movie)
 
+        // A SnackBar to undo the favorite toggle
         Snackbar
             .make(binding.root, "Removed '${movie.title}' from favorites", Snackbar.LENGTH_LONG)
             .setAction("UNDO") {

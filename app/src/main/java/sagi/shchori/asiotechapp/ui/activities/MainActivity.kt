@@ -4,20 +4,19 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import dagger.hilt.android.AndroidEntryPoint
-import sagi.shchori.asiotechapp.ui.fragments.moviedetailsview.MovieDetailsFragment
+import sagi.shchori.asiotechapp.BaseActivity
 import sagi.shchori.asiotechapp.R
 import sagi.shchori.asiotechapp.databinding.ActivityMainBinding
 import sagi.shchori.asiotechapp.ui.UiState
 import sagi.shchori.asiotechapp.ui.fragments.mainview.MainFragment
 import sagi.shchori.asiotechapp.ui.fragments.moviedetailsview.DetailSource
+import sagi.shchori.asiotechapp.ui.fragments.moviedetailsview.MovieDetailsFragment
 import sagi.shchori.asiotechapp.ui.viewmodels.MovieViewModel
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private val viewModel: MovieViewModel by viewModels()
 
@@ -56,7 +55,12 @@ class MainActivity : AppCompatActivity() {
                     return@commit
                 }
 
-                add(R.id.container, MovieDetailsFragment.newInstance(DetailSource.MOVIE_LIST), "DetailsFragment")
+                add(
+                    R.id.container,
+                    MovieDetailsFragment.newInstance(DetailSource.MOVIE_LIST),
+                    "DetailsFragment"
+                )
+
                 addToBackStack("DetailsFragment")
             }
         }
@@ -82,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         registerForBackPressToFinishActivity()
     }
 
-    private fun registerForBackPressToFinishActivity() {
+    override fun registerForBackPressToFinishActivity() {
         onBackPressedDispatcher.addCallback(
             this,
             object : OnBackPressedCallback(true) {
@@ -97,13 +101,5 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             })
-    }
-
-    private fun showDialog(title: String, message: String) {
-        AlertDialog.Builder(this)
-            .setTitle(title)
-            .setMessage(message)
-            .setPositiveButton("Ok", null)
-            .show()
     }
 }

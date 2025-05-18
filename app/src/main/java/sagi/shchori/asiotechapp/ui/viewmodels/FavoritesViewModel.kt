@@ -43,6 +43,8 @@ class FavoritesViewModel @Inject constructor(
     }
 
     fun selectMovie(movie: Movie) {
+        Logger.d("selectMovie: Movie ID ${movie.imdbID}")
+
         _selectedMovie.postValue(movie)
     }
 }

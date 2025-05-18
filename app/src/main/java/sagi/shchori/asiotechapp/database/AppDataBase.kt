@@ -11,6 +11,7 @@ import sagi.shchori.asiotechapp.ui.models.Movie
 @Database(entities = [Movie::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDataBase : RoomDatabase() {
+
     abstract fun movieDao(): MovieDao
 
     companion object {
@@ -19,10 +20,10 @@ abstract class AppDataBase : RoomDatabase() {
 
         fun getDB(context: Context): AppDataBase {
 
-            Logger.i("Getting DB instance, instance = $INSTANCE")
+            Logger.d("Getting DB instance, instance = $INSTANCE")
 
             return INSTANCE ?: synchronized(this) {
-                Logger.i("Creating new DB instance")
+                Logger.d("Creating new DB instance")
 
                 val instance = Room.databaseBuilder(
                     context.applicationContext,

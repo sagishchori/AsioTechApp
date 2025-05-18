@@ -103,6 +103,7 @@ class MovieAdapter @Inject constructor(private val listener: OnMovieClickListene
     fun updateMovies(movies: List<Movie>?) {
         this.movies = movies ?: emptyList()
 
+        // Reset the selected item
         selectedPosition = RecyclerView.NO_POSITION
         selectedView = null
 

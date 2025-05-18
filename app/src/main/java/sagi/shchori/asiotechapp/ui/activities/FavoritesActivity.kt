@@ -3,18 +3,18 @@ package sagi.shchori.asiotechapp.ui.activities
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import dagger.hilt.android.AndroidEntryPoint
-import sagi.shchori.asiotechapp.ui.fragments.moviedetailsview.MovieDetailsFragment
+import sagi.shchori.asiotechapp.BaseActivity
 import sagi.shchori.asiotechapp.R
 import sagi.shchori.asiotechapp.databinding.ActivityFavoritesBinding
 import sagi.shchori.asiotechapp.ui.fragments.favorites.FavoritesFragment
 import sagi.shchori.asiotechapp.ui.fragments.moviedetailsview.DetailSource
+import sagi.shchori.asiotechapp.ui.fragments.moviedetailsview.MovieDetailsFragment
 import sagi.shchori.asiotechapp.ui.viewmodels.FavoritesViewModel
 
 @AndroidEntryPoint
-class FavoritesActivity : AppCompatActivity() {
+class FavoritesActivity : BaseActivity() {
 
     private val viewModel: FavoritesViewModel by viewModels()
 
@@ -79,7 +79,7 @@ class FavoritesActivity : AppCompatActivity() {
         registerForBackPressToFinishActivity()
     }
 
-    private fun registerForBackPressToFinishActivity() {
+    override fun registerForBackPressToFinishActivity() {
         onBackPressedDispatcher.addCallback(
             this,
             object : OnBackPressedCallback(true) {

@@ -234,6 +234,7 @@ class MovieViewModel @Inject constructor(
                     // value
                     if (movieFromList.imdbID == selectedMovie.imdbID) {
                         movieFromList.isFavorite = !selectedMovie.isFavorite
+
                         _selectedMovie.value?.isFavorite = selectedMovie.isFavorite
 
                         _movies.postValue(_movies.value)

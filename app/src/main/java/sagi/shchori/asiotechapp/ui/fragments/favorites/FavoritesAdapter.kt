@@ -24,6 +24,7 @@ class FavoritesAdapter(
             parent,
             false
         )
+
         return FavoriteViewHolder(binding)
     }
 
@@ -39,6 +40,7 @@ class FavoritesAdapter(
 
     fun submitList(newMovies: List<Movie>) {
         movies = newMovies
+
         notifyDataSetChanged()
     }
 

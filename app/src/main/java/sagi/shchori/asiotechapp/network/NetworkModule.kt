@@ -13,7 +13,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    const val apiKey = BuildConfig.OMDB_API_KEY
+    const val OMDB_API_KEY = BuildConfig.OMDB_API_KEY
 
     @Provides
     @Singleton

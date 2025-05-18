@@ -71,8 +71,6 @@ class MovieDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var isFavoriteOn = false
-
         when(source) {
             DetailSource.MOVIE_LIST -> {
                 (activeDetailViewModel as MovieViewModel).selectedMovie.observe(viewLifecycleOwner) { movie ->

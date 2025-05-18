@@ -7,22 +7,22 @@ object Logger {
     private const val TAG = "AsioTag"
 
     fun i(message: String) {
-        costumeLog(TAG, message, Log.INFO)
+        customeLog(TAG, message, Log.INFO)
     }
 
     fun d(message: String) {
-        costumeLog(TAG, message, Log.DEBUG)
+        customeLog(TAG, message, Log.DEBUG)
     }
 
     fun e(message: String) {
-        costumeLog(TAG, message, Log.ERROR)
+        customeLog(TAG, message, Log.ERROR)
     }
 
     fun v(message: String) {
-        costumeLog(TAG, message, Log.VERBOSE)
+        customeLog(TAG, message, Log.VERBOSE)
     }
 
-    fun costumeLog(tag: String,message: String, priority: Int) {
+    fun customeLog(tag: String, message: String, priority: Int) {
         when(priority) {
             Log.INFO -> Log.i(tag, message)
             Log.DEBUG -> Log.d(tag, message)

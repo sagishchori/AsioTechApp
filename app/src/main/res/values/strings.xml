@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">AsioTechApp</string>
-    <string name="no_favorites_yet">No favorites movies yet...</string>
+    <string name="no_favorites_yet">No favorites movies yet…</string>
     <string name="favorites_title">Favorites</string>
 </resources>
